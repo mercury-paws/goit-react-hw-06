@@ -7,10 +7,11 @@ const slice = createSlice({
   },
   reducers: {
     addContact: (state, action) => {
-      state.items = action.payload;
+      state.items.push(action.payload);
     },
     deleteContact: (state, action) => {
-      state.items = items.filter((contact) => contact.id !== contactId);
+      state.items -
+        state.items.filter((contact) => contact.id !== action.payload);
     },
   },
 });
