@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
 
+//екшен додавання контакту при сабміті useDispatch
+
 const UserSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
