@@ -7,7 +7,7 @@ import { addContact } from "../../redux/contactsSlice";
 
 //екшен додавання контакту при сабміті useDispatch
 
-const dispatch = useDispatch();
+// const dispatch = useDispatch();
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -31,7 +31,7 @@ export default function ContactForm() {
       number: values.number,
     };
 
-    dispatch(addContact(newContact));
+    // dispatch(addContact(newContact));
     actions.resetForm();
   };
 

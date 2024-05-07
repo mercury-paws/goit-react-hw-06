@@ -5,6 +5,10 @@ import css from "./SearchBox.module.css";
 export default function SearchBox({ value, onFilter }) {
   const handleSearch = (event) => {
     onFilter(event.target.value);
+
+    // state.name
+    //     .toLowerCase()
+    //     .includes(action.payload.toLowerCase());
   };
   return (
     <div className={css.search}>
@@ -13,7 +17,7 @@ export default function SearchBox({ value, onFilter }) {
         type="text"
         name="search"
         value={value}
-        onChange={handleSearch}
+        // onChange={handleSearch}
         className={css.inputSearch}
       ></input>
     </div>
