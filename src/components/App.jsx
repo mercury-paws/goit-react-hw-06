@@ -36,9 +36,9 @@ export default function App() {
     <div>
       <h1>Phonebook</h1>
       <p>{filter}</p>
-      <ContactForm onAdd={addContacts} />
+      <ContactForm />
       <SearchBox value={filter} />
-      <ContactList onDelete={deleteContact} contacts={foundContact} />
+      <ContactList contacts={foundContact} />
     </div>
   );
 }
