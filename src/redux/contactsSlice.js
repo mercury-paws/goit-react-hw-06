@@ -4,16 +4,14 @@ import initialContacts from "../contactList.json";
 const slice = createSlice({
   name: "contact",
   initialState: {
-    contacts: initialContacts,
+    items: initialContacts,
   },
   reducers: {
     addContact: (state, action) => {
-      state.contacts.push(action.payload);
+      state.items.push(action.payload);
     },
     deleteContact: (state, action) => {
-      state.contacts = state.contacts.filter(
-        (contact) => contact.id !== action.payload
-      );
+      state.items = state.items.filter((cont) => cont.id !== action.payload);
     },
   },
 });

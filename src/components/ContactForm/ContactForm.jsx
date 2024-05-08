@@ -5,9 +5,7 @@ import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contactsSlice";
 
-//екшен додавання контакту при сабміті useDispatch
-
-// const dispatch = useDispatch();
+//екшен додавання контакту при сабміті
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -23,6 +21,8 @@ const UserSchema = Yup.object().shape({
 });
 
 export default function ContactForm() {
+  const dispatch = useDispatch();
+
   const contactId = nanoid();
   const handleSubmit = (values, actions) => {
     const newContact = {
@@ -31,7 +31,7 @@ export default function ContactForm() {
       number: values.number,
     };
 
-    // dispatch(addContact(newContact));
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 

@@ -1,5 +1,5 @@
 import css from "./Contact.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsSlice";
 
 //екшен видалення контакту при кліку по кнопці видалення useDispatch
@@ -7,9 +7,6 @@ import { deleteContact } from "../../redux/contactsSlice";
 export default function Contact({ contact: { name, number, id } }) {
   const dispatch = useDispatch();
 
-  // const contact = useSelector((state) => state.contact.value);
-
-  console.log(dispatch(deleteContact(id)));
   return (
     <div className={css.contactInfo}>
       <div>

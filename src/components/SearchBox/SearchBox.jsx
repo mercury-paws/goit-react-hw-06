@@ -1,23 +1,19 @@
 import css from "./SearchBox.module.css";
+import { useDispatch } from "react-redux";
+import { changeFilter } from "../../redux/filtersSlice";
 
 //екшен зміни фільтра при введенні в текстове поле
 
-export default function SearchBox({ value, onFilter }) {
-  const handleSearch = (event) => {
-    onFilter(event.target.value);
+export default function SearchBox() {
+  const dispatch = useDispatch();
 
-    // state.name
-    //     .toLowerCase()
-    //     .includes(action.payload.toLowerCase());
-  };
   return (
     <div className={css.search}>
       <label>Find contacts by name</label>
       <input
         type="text"
         name="search"
-        value={value}
-        // onChange={handleSearch}
+        onChange={(event) => dispatch(changeFilter(event.target.value))}
         className={css.inputSearch}
       ></input>
     </div>
